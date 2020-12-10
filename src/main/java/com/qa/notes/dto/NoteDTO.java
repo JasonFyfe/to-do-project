@@ -5,9 +5,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class TodoDTO {
-	
-	private Long id;
-	private String body;
+public class NoteDTO {
 
+	private Long id;
+	private String title;
 }
