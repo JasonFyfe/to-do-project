@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.qa.notes.dto.TodoDTO;
+import com.qa.notes.exceptions.TodoNotFoundException;
 import com.qa.notes.persistence.domain.Todo;
 import com.qa.notes.persistence.repo.TodoRepo;
+import com.qa.notes.util.SpringBeanUtil;
 
 @Service
 public class TodoService {
@@ -36,16 +38,15 @@ public class TodoService {
 	public List<TodoDTO> readAll() {
 		return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
 	}
-	
-	// TODO implement custom exception for todo not found
+
 	public TodoDTO readOne(Long id) {
-		return this.mapToDTO(this.repo.findById(id).orElseThrow());
+		return this.mapToDTO(this.repo.findById(id).orElseThrow(TodoNotFoundException::new));
 	}
 	
 	public TodoDTO update(TodoDTO todoDTO, Long id) {
-		Todo toUpdate = this.repo.findById(id).orElseThrow();
+		Todo toUpdate = this.repo.findById(id).orElseThrow(TodoNotFoundException::new);
 		toUpdate.setBody(todoDTO.getBody());
-		// TODO implement mergeNotNull function
+		SpringBeanUtil.mergeNotNull(todoDTO, toUpdate);
 		return this.mapToDTO(this.repo.save(toUpdate));
 	}
 	
