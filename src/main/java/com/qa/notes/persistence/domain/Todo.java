@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
@@ -20,6 +21,9 @@ public class Todo {
 	
 	@NotNull
 	private String body;
+	
+	@ManyToOne
+	private Note note;
 	
 	public Todo(Long id, String body) {
 		super();
