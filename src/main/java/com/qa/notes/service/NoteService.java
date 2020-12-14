@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.qa.notes.dto.NoteDTO;
+import com.qa.notes.exceptions.NoteNotFoundException;
 import com.qa.notes.persistence.domain.Note;
 import com.qa.notes.persistence.repo.NoteRepo;
+import com.qa.notes.util.SpringBeanUtil;
 
 @Service
 public class NoteService {
@@ -36,16 +38,15 @@ public class NoteService {
 	public List<NoteDTO> readAll() {
 		return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
 	}
-	
-	// TODO implement custom exception for Note not found
+
 	public NoteDTO readOne(Long id) {
-		return this.mapToDTO(this.repo.findById(id).orElseThrow());
+		return this.mapToDTO(this.repo.findById(id).orElseThrow(NoteNotFoundException::new));
 	}
 	
 	public NoteDTO update(NoteDTO noteDTO, Long id) {
-		Note toUpdate = this.repo.findById(id).orElseThrow();
+		Note toUpdate = this.repo.findById(id).orElseThrow(NoteNotFoundException::new);
 		toUpdate.setTitle(noteDTO.getTitle());
-		// TODO merge not null implementation
+		SpringBeanUtil.mergeNotNull(noteDTO, toUpdate);
 		return this.mapToDTO(this.repo.save(toUpdate));
 	}
 	
