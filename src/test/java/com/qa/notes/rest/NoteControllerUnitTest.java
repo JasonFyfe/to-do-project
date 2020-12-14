@@ -59,11 +59,8 @@ class NoteControllerUnitTest
     void readAllTest() throws Exception
     {
     	List<NoteDTO> dtos = LISTOFNOTES.stream().map(this::mapToDTO).collect(Collectors.toList());
-    	
     	when(this.service.readAll()).thenReturn(dtos);
-    	
     	assertThat(this.controller.readAll()).isEqualTo(new ResponseEntity<>(dtos, HttpStatus.OK));
-    	
     	verify(this.service, atLeastOnce()).readAll();
     }
 
