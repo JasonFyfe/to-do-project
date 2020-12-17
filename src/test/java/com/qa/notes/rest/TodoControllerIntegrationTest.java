@@ -52,8 +52,6 @@ class TodoControllerIntegrationTest
 	private final Todo TEST_TODO_2 = new Todo(2L, "Eggs");
 	private final Todo TEST_TODO_3 = new Todo(3L, "Milk");
 	
-	private final List<Todo> LISTOFTODOS = List.of(TEST_TODO_1, TEST_TODO_2, TEST_TODO_3);
-	
 	private final String URI = "/todos";
 	
 	@Test

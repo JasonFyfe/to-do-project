@@ -18,8 +18,6 @@ import com.qa.notes.dto.TodoDTO;
 import com.qa.notes.persistence.domain.Todo;
 import com.qa.notes.service.TodoService;
 
-import net.bytebuddy.asm.Advice.This;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

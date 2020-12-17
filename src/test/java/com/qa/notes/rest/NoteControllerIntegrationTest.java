@@ -55,7 +55,6 @@ class NoteControllerIntegrationTest
 	private final Note TEST_NOTE_2 = new Note(2L, "Wish List");
 	private final Note TEST_NOTE_3 = new Note(3L, "House Chores");
 	
-	private final List<Note> LISTOFNOTES = List.of(TEST_NOTE_1, TEST_NOTE_2, TEST_NOTE_3);
 	private final List<Todo> EMPTYTODOLIST = Collections.emptyList();
 	
 	private final String URI = "/notes";
