@@ -7,13 +7,12 @@ JavaScript - with a little Bootstrap 4 and JQuery.
 ## Contents
 * #### [Getting Started](#Getting_Started)
     * [Prerequisites](#Prerequisites)
-* ##### [Installing](#Installing)
-    * [Cloning](#Cloning)
-        * [Git Clone](#Git_Clone)
+* ##### [Cloning](#Cloning)
+    * [Git Clone](#Git_Clone)
     * [Spring Tool Suite](#Spring)
         * [Open Project](#S_Open)
         * [Run the Project](#S_Run)
-* ##### [Testing](#Testing)
+* ##### [Testing](#tests)
     * [Unit Tests](#Unit_Tests)
     * [Integration Tests](#Integration_Tests)
     * [Static Analysis](#Static_Analysis)
@@ -84,7 +83,7 @@ Navigate to http://localhost:8081/ in your browser.
 
 [Go to the Top](#top)
 
-## Testing<a name="Testing"></a>
+## Testing<a name="tests"></a>
 
 All the Unit & Integration testing was performed in Spring. SonarQube was used for Static Analysis.
 
