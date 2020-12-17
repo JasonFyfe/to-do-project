@@ -16,9 +16,9 @@ JavaScript - with a little Bootstrap 4 and JQuery.
     * [Unit Tests](#Unit_Tests)
     * [Integration Tests](#Integration_Tests)
     * [Static Analysis](#Static_Analysis)
-* ##### [Deployment](#Deployment)
-* ##### [Documentation](#Documentation)
-* ##### [Appendix](#Appendix)
+* ##### [Deployment](#deployment)
+* ##### [Documentation](#documentation)
+* ##### [Appendix](#appendix)
     * [Built With](#Built_With)
     * [Versioning](#Versioning)
     * [Authors](#Authors)
@@ -148,10 +148,10 @@ This is an example report given by SonarQube for the project.
 ![SonarQube Report](documentation/Sonarqube Analysis/analysis-2.png)
 [Go to the Top](#top)
 
-## Deployment<a name="Deployment"></a>
+## Deployment<a name="deployment"></a>
 All documentation for the project can be found here: [Documentation](https://github.com/JasonFyfe/to-do-project/tree/main/documentation)
 
-## Documentation<a name="Documentation"></a>
+## Documentation<a name="documentation"></a>
 
 To run the compiled version of the project you will need Java installed on your machine,
 then run:
@@ -161,7 +161,7 @@ java -jar to-do-project.war
 
 [Go to the Top](#top)
 
-## Appendix<a name="Appendix"></a>
+## Appendix<a name="appendix"></a>
 
 ### Built With<a name="Built_With"></a>
 * [Maven](https://maven.apache.org/) - Dependency Management
